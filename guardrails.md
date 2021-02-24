@@ -26,9 +26,9 @@ Products and services should be designed in such a way that they are not tied to
 
 Microservices are built and deployed as containers to achieve portability across difference cloud platforms. They are written once, run anywhere.
 
-## You Build It You Run It
+## Deployment independence
 
-Delivery team is responsible for its Run activities, including deployments and production support.
+A single microservice can be deployed to production without having to deploy any other services.
 
 ## Encryption Everywhere
 
@@ -40,3 +40,8 @@ All users including those inside the organization’s enterprise network are req
 
 ## Embrace Automation
 
+Embrace automation from Provisioning, Compute, Storage, Network Services to Testing, Continuous Integration and Continuous Delivery of the applications and services.
+
+## You Build It You Run It
+
+Delivery team is responsible for its Run activities, including deployments and production support.
