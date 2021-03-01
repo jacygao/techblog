@@ -8,6 +8,10 @@ API should be the first user interface and interaction for your application. API
 
 Strive to build lean microservices with a single responsibility, without many dependencies, allowing teams to work independent, deploy independent, fail and scale independent.
 
+## Modeling around business domain
+
+Structure services around business domains so that changes related to business domains tend to sit within service boundaries, rather than cutting across them. That makes sequencing of work much less hassle.
+
 ## Design for failure
 
 The design of all credible, fault-tolerant architectures is based on one extremely important principle:
@@ -45,3 +49,8 @@ Embrace automation from Provisioning, Compute, Storage, Network Services to Test
 ## You Build It You Run It
 
 Delivery team is responsible for its Run activities, including deployments and production support.
+
+## High Observerability
+
+Services should have standardized monitoring to observe the health of the applications. Logs, metrics and stats across services should be aggregated and centralised with the capability to track the call chains through your system.
+
