@@ -54,3 +54,6 @@ Delivery team is responsible for its Run activities, including deployments and p
 
 Services should have standardized monitoring to observe the health of the applications. Logs, metrics and stats across services should be aggregated and centralised with the capability to track the call chains through your system.
 
+## Don't Reinvent the Wheel
+
+Evaluate existing solutions and consider factors like control, monetary costs, maintenance, opportunity cost, and time to value. Armed with these inputs to make an informed decision between Build and Buy. Don't Reinvent the Wheel.
