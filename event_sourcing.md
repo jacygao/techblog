@@ -1,10 +1,10 @@
 # Research - Demystifying Event Sourcing
 
-# Preface
+## Preface
 
-There are a lot of opinions about event sourcing. However, this article focuses on fact through a form of research to explore what event sourcing is, where it came from and what can we do with it, as well as make some logical assumpltions based on the outcome of these learnings.
+There are a lot of articles about event sourcing. Despite of all the opinions on the intenet, this article focuses on fact through a form of research to explore what event sourcing is, where it came from and what can we do with it. Armed with these fact, we should be able to make some logical assumpltions.
 
-# Definition
+## Definition
 
 Martin fowler first mentioned the concept of Event Sourcing in his article back in December 2005 where he explained event sourcing as 
 
@@ -28,12 +28,54 @@ AxonIQ is arguablly the most established framework for Event Sourcing and CQRS, 
 
 One common misconceptions is that Event Sourcing is associated with an Event Streaming or Event Driven Architecture. There are certainly many things you can achieve with Event Sourcing. Nevertheless, conceptually, Event Sourcing is no more than a pattern to store your data in a form of a serials of events as opposed to 
 
-# Inspiration
+## Inspiration
+
+Event Sourcing in practice can be traced all the way back to the Mesopotamia Sumer (Young 2014). The most used comparason is a double-entry accounting ledger where the ledger entrys are a log of all of the events that change the value of an Account, so that an Account is itself an example of Event Sourcing. (Fowler 2004)
 
 
 
+Other examples of event sourcing including lawyer adding addendum to the contracts, doctors appending pages to files, etc (Young 2014)
 
-# everthing else
+
+## misconceptions
+
+### Git is built with sourcing (Fowler 2004)
+
+
+### Event Sourcing needs an event bus
+
+
+### Event Sourcing is not enterprisey
+
+
+### Event Sourcing needs to be used with CQRS
+
+
+### Event Sourcing is hard
+
+
+## The benifits for Event Sourcing
+
+### The general benifits
+
+
+### The overlooked benifits
+
+"avoid having to use a 2pc transaction between the data model and the message queue" - Young 
+
+"Testing with the events that actually happens" - Young
+
+"visualise concurrency violation" - Young
+
+## The biggest challenge of Event Sourcing
+
+
+
+## Tradeoff
+
+
+
+## everthing else
 SQL Migration script
 
 "acounting only appends"
@@ -51,7 +93,7 @@ SQL Migration script
 "doctors append thing to file"
 
 
-# issues
+## issues
 
 Versioning
 
