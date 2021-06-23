@@ -26,7 +26,7 @@ AxonIQ is arguablly the most established framework for Event Sourcing and CQRS, 
 
     "Event Sourcing is a pattern for data storage, where instead of storing the current state of any entity, all past changes to that state are stored." - AxonIQ (https://axoniq.io/resources/event-sourcing)
 
-One common misconceptions is that Event Sourcing is associated with an Event Streaming or Event Driven Architecture. There are certainly many things you can achieve with Event Sourcing. Nevertheless, conceptually, Event Sourcing is no more than a pattern to store your data in a form of a serials of events as opposed to 
+One common misconceptions is that Event Sourcing is associated with an Event Streaming or Event Driven Architecture. There are certainly many things you can achieve with Event Sourcing. Nevertheless, conceptually, Event Sourcing is no more than a pattern to store your data in a form of a serials of events. This can be an alternative model to the common CRUD object state management.
 
 ## Inspiration
 
@@ -40,21 +40,22 @@ Other examples of event sourcing including lawyer adding addendum to the contrac
 ## misconceptions
 
 ### Git is built with sourcing (Fowler 2004)
-
+Git leverages snapshotting technique rather than event sourcing.
 
 ### Event Sourcing needs an event bus
-
+it needs a persistent event store.
 
 ### Event Sourcing is not enterprisey
-
+banks
 
 ### Event Sourcing needs to be used with CQRS
-
+these are 2 separate concepts
 
 ### Event Sourcing is hard
-
+total effort roughly the same
 
 ## The benifits for Event Sourcing
+
 
 ### The general benifits
 
@@ -66,6 +67,8 @@ Other examples of event sourcing including lawyer adding addendum to the contrac
 "Testing with the events that actually happens" - Young
 
 "visualise concurrency violation" - Young
+
+"performance benifits due to only one disk write for both your storage and your durable queue" - Young
 
 ## The biggest challenge of Event Sourcing
 
