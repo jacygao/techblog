@@ -1,5 +1,8 @@
 # Reseach - Take a different look at Modular Monolith
 
+## A Fary Tale
+Once there was a monolith, then there was microservices, now there is modular monolith.
+
 ## Explore the definition of a Modular Monolith
 
 ### Signle process Monolith
@@ -12,32 +15,14 @@
 
 ### Cons of monolith architecture
 
-A lot of articles have talked about the drawbacks of a Monolith Architecture. In its deep core, the challage of a Monolith Architecture is around the difficulty to deal with the complexity of time and scale". This is mostly about the ability to make changes to the application, either adding a new library, fixing a bug or deploy an update, a monolith application introduces significant overhead when your development team grows.
-
-//TODO: delete the following:
-
-- all in one place and not reusable
-
-Bug in any module can potentially impact the entire application.
-difficult to adopt new technologies since changes in frameworks or languages will affect an entire application
-
-- harder to scale
-
-This simple approach has a limitation in size and complexity.
-The size of the application can slow down the start-up time.
-You must redeploy the entire application on each update.
-Continuous deployment is difficult.
-different modules have conflicting resource requirements
-
-- black box
-
-Application is too large and complex to fully understand and made changes fast and correctly.
-Impact of a change is usually not very well understood which leads to do extensive manual testing.
-
-//
+A lot of articles have talked about the drawbacks of a Monolith Architecture. In its deep core, the challage of a Monolith Architecture is around the limitation when dealing with the complexity of time and scale. This is mostly about the ability to make changes to the application, either adding a new library, fixing a bug or deploy an update, a monolith application introduces significant overhead when your development team and the codebase grow.
 
 (https://mlsdev.com/blog/128-microservices-vs-monoliths-how-to-understand-when-it-s-time-to-use-the-former-option)
 (https://articles.microservices.com/monolithic-vs-microservices-architecture-5c4848858f59)
+
+Then Microservices was introduced to address these problems around scaling. However it introduces a whole different problems.
+
+Now there is Modular Monolith
 
 ### Modularity
 (Monolith Decomposition Patterns • Sam Newman • GOTO 2019)
@@ -56,6 +41,8 @@ num of dependencies, strength of coupling, stability of the modules on which the
 - Module must have defined interface
 
 - Domain boundries
+
+
 
 ## Characteristics of Modular Monolith
 
