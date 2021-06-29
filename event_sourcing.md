@@ -28,29 +28,32 @@ AxonIQ is arguablly the most established framework for Event Sourcing and CQRS, 
 
 One common misconceptions is that Event Sourcing is associated with an Event Streaming or Event Driven Architecture. There are certainly many things you can achieve with Event Sourcing. Nevertheless, conceptually, Event Sourcing is no more than a pattern to store your data in a form of a serials of events. This can be an alternative model to the common CRUD object state management.
 
-### Command Sourcing
+### Command Sourcing vs Event Sourcing
 
 what is command sourcing and how it is different from event sourcing.
 
 ## Inspiration
 
-Event Sourcing in real life can be traced all the way back to the Mesopotamia Sumer (Young 2014). The prime example of Event Sourcing is a double-entry accounting ledger where the ledger entrys are a log of all of the events that change the value of an Account, so that an Account is itself an example of Event Sourcin (Fowler 2004). Other examples of event sourcing mentioned by Greg Young include how lawyers add addendum to the contracts and how doctors appending pages to files, etc (Young 2014)
+### Event Sourcing in real life
 
-Bob Martin also wrote about the Event Sourcing in the Functional Programming Chaper of his book Clean Architecture where he discribed how event sourcing enforces immutable data which eliminates the challenges from concurrency and race conditions.
+Event Sourcing in real life can be traced all the way back to the Mesopotamia Sumer (Young 2014). The prime example of Event Sourcing is a double-entry accounting ledger where the ledger entrys are a log of all of the events that change the value of an Account, so that an Account is itself an example of Event Sourcin (Fowler 2004). Other examples of event sourcing mentioned by Greg Young include how lawyers add addendum to the contracts and how doctors appending records to files, etc (Young 2014)
 
 As it can be seen that Event Sourcing is inspired by real life examples. There isn't any official publications when and who invented this concept at the first place. it is reasonable to assume Luca Pacioli, a friend of Leonardo da Vinci, who published Summa de Arithmetica(https://en.wikipedia.org/wiki/Summa_de_arithmetica) in which described the concept of double-entry bookkeeping in 1494 was one the first people who invented the idea of event sourcing.
 
-## misconceptions
+### Event Sourcing and Functional Programming
+Bob Martin also wrote about the Event Sourcing in the Functional Programming Chaper of his book Clean Architecture where he discribed how event sourcing enforces immutable data which eliminates the challenges from concurrency and race conditions.
+
+## Misconceptions
 
 Now we understand what Event Sourcing really is about, let's take a look at some common misconceptions about Event Sourcing.
 
 ### Git is built with Event Sourcing (Fowler 2004)
 
-Martin Fowler in his Event Sourcing article mentioned that a version control systems like git is an implementation of Event Sourcing. This statement is not technically correct. In fact, Git uses snapshotting technique on `git commit` and the `git diff` simply compare 2 snapshots(git trees) and calculate the difference on demand ((https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Basic-Snapshotting)). Although the technique of snapshotting is commonly used with Event Sourcing to reduce the number of in memory calculation of a large amount of event history, Git implementing Event Sourcing is technically incorrect.
+Martin Fowler in his Event Sourcing article mentioned that a version control systems like git is an implementation of Event Sourcing. This statement is not technically correct. In fact, Git uses snapshotting technique on `git commit` and the `git diff` simply compare 2 snapshots(git trees) and calculate the difference on demand ((https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Basic-Snapshotting)). Although the technique of snapshotting is commonly used with Event Sourcing to reduce the number of in memory calculation of a large amount of event history (Fowler 2005), Git as an example of Event Sourcing is technically incorrect.
 
 ### Event Sourcing needs an event bus
 
-Although Confluet has demonstrated this great solution where Kafka can be leveraged as a persistent event store, event bus is not a default solution for implementing Event Sourcing. Greg Young emphasized that a database is also a event queue. What Event Sourcing really needs is a persistent event store, regardless its form.
+Although this Confluet article demonstrates a great solution design where Kafka can be leveraged as a persistent event store, event bus is not a default solution for implementing Event Sourcing. Greg Young emphasized that a database is also a event queue. What Event Sourcing really needs is a persistent event store, regardless its form.
 
 ### Event Sourcing is not enterprisey
 
@@ -58,11 +61,11 @@ Despite the fact that enterprisey sounds like a inresponsible
 
 ### Event Sourcing needs to be used with CQRS
 
-these are 2 separate concepts
+Event Sourcing and CQRS are 2 very different concepts althought CQRS is often applied to an Event Sourced system to provide the query capability. Either technique can be applied individually.
 
 ### Event Sourcing is hard
 
-total effort roughly the same
+Multiple people have indicated that the total effort it requires to implement an Event Sourcing solution and a typical CRUD solution reuqires roughly the same amount of work. Latter may get up and running quicker, but Event Sourcing requires less work in a long run.
 
 ## The benifits for Event Sourcing
 
@@ -90,6 +93,9 @@ total effort roughly the same
 
 ## everthing else
 Command Sourcing vs Event Sourcing
+
+- State from event
+- State as event
 
 SQL Migration script
 
