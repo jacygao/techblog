@@ -28,17 +28,13 @@ AxonIQ is arguablly the most established framework for Event Sourcing and CQRS, 
 
 One common misconceptions is that Event Sourcing is associated with an Event Streaming or Event Driven Architecture. There are certainly many things you can achieve with Event Sourcing. Nevertheless, conceptually, Event Sourcing is no more than a pattern to store your data in a form of a serials of events. This can be an alternative model to the common CRUD object state management.
 
-### Event
-
-something already happened
-
-### Command
-
-
-
 ### Command Sourcing vs Event Sourcing
 
 what is command sourcing and how it is different from event sourcing.
+
+    "With a command you tell a system to do X. Events, however, just communicate that something happened - with an event you let a system know that Y has happened." - Fowler 2006
+
+With Event Sourcing, events in an event store are being replayed, you essentially recreating the view of the records as opposed to replaying the command in which in that case, it is Command Sourcing. 
 
 ## Inspiration
 
