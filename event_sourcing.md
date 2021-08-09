@@ -6,25 +6,26 @@ There are a lot of articles about event sourcing. Despite of all the opinions on
 
 ## Definition
 
-Martin fowler first mentioned the concept of Event Sourcing in his article back in December 2005 where he explained event sourcing as 
+Martin Fowler and Greg Young have both written great definitions of Event Sourcing:
 
-    "Event Sourcing ensures that all changes to application state are stored as a sequence of events." - Martin Fowler 2005
+Martin Fowler, 2005:
 
-One of the earliest explanations of Event Sourcing from Greg Young, the creator of CQRS, talked about his event sourced system at QCon SF 2007 
+    "Event Sourcing ensures that all changes to application state are stored as a sequence of events."
 
-    "make objects responsible for tracking our in-state changes" - Greg Young 2007
-    
-In the following years, Greg Young gave numerous talks about Event Sourcing and CQRS. in 2014, Greg Young talked about Event Sourcing at the GOTO conference with the definition 
+Greg Young, 2014:
 
-    "Event Sourcing says all state is transient and you only store facts." Greg Young 2014
+    "Event Sourcing says all state is transient and you only store facts."
 
-While Event Sourcing became more popular in the software development in the 2010s, we started to see more and more blog posts writing about event sourcing, even in those big technology firms, including 
+In one of [Microsoft's articles]((https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)) about Event Sourcing, you can also find the following definition:
 
-    "Instead of storing just the current state of the data in a domain, use an append-only store to record the full series of actions taken on that data." - Microsoft Docs (https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)
+    "Instead of storing just the current state of the data in a domain, use an append-only store to record the full series of actions taken on that data."
 
-AxonIQ is arguablly the most established framework for Event Sourcing and CQRS, you can also find an explaination of Event Sourcing on its website:
+What is worth to note here is that Event Sourcing is about data and state. An event is something already happened in the past which means it becomes immutable. A series of events creates a state of an entity or an application which has been described as "Events as State". This should be differentiated from "State from Events".
 
-    "Event Sourcing is a pattern for data storage, where instead of storing the current state of any entity, all past changes to that state are stored." - AxonIQ (https://axoniq.io/resources/event-sourcing)
+## State as Event vs State from Event
+
+The distinction is important. “State from Events” assumes an existing event stream, regardless of how it was produced, and projects state from it. No new events are added to the stream. “Events as State” is about events as the single source of truth. In other words, new events are added to the stream, but they’re constrained by business rules, and these rules depend on previous events as their input (as opposed to state as the input).
+
 
 One common misconceptions is that Event Sourcing is associated with an Event Streaming or Event Driven Architecture. There are certainly many things you can achieve with Event Sourcing. Nevertheless, conceptually, Event Sourcing is no more than a pattern to store your data in a form of a serials of events. This can be an alternative model to the common CRUD object state management.
 
