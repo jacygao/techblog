@@ -35,7 +35,7 @@ what is command sourcing and how it is different from event sourcing.
 
     "With a command you tell a system to do X. Events, however, just communicate that something happened - with an event you let a system know that Y has happened." - Fowler 2006
 
-With Event Sourcing, events in an event store are being replayed, you essentially recreating the view of the records as opposed to replaying the command in which in that case, it is Command Sourcing. 
+With Event Sourcing, events in an event store are being replayed, you essentially recreating the view of the records as opposed to replaying the command in which in that case, it is Command Sourcing.
 
 ## Inspiration
 
