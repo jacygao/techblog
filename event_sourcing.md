@@ -2,7 +2,9 @@
 
 ## Preface
 
-There are a lot of articles about event sourcing. Despite of all the opinions on the intenet, this article focuses on fact through a form of research to explore what event sourcing is, where it came from and what can we do with it. Armed with these fact, we should be able to make some logical assumpltions.
+I recently worked with ThoughtWorks at PEXA and had a number of great conversation on Event Sourcing and if it is a good fit for our new GreenField project. After reading many articles and watching many videos about event sourcing, I feel it is worthwhile to write my own. Mainly because this is a very simple concept many people seem to overcomplicate.
+
+Let's start by looking at the definitions.
 
 ## Definition
 
@@ -16,16 +18,39 @@ Greg Young, 2014:
 
     "Event Sourcing says all state is transient and you only store facts."
 
-In one of [Microsoft's articles]((https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)) about Event Sourcing, you can also find the following definition:
+Another good definition i came cross is from this [Microsoft's article]((https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)):
 
     "Instead of storing just the current state of the data in a domain, use an append-only store to record the full series of actions taken on that data."
 
-What is worth to note here is that Event Sourcing is about data and state. An event is something already happened in the past which means it becomes immutable. A series of events creates a state of an entity or an application which has been described as "Events as State". This should be differentiated from "State from Events".
+It is worth to note that the word state appeared in all 3 definitions. This concludes that Event Sourcing is about state which has everything to do with events.
+
+## Domain Events vs Event Sourcing Events
+
+When talking about events, people ofte associate it with Domain Events from Domain Driven Design(DDD). Fowler wrote an article on Domain Events way back in 2005. In short, Domain Events are described as something that happens in the domain and is important to domain experts. Such events typically occur regardless of whether or to what extent the domain is implemented in a software system.
+Examples of Domain Events can be:
+
+- User Registered
+- Order Placed
+- Payment deadline expired
+
+Domain events are typically used for communication between domains, either used as a notification that something has happened, or transfering state from one domain to another by caryying necessary information as part of the event payload.
+
+Events for event sourcing are usually within a specific domain and create a state of domain objects as event. This is also call an aggregate. For example, UserRegistration aggregate could have the following events:
+- emailAddressEntered (email@example.com)
+- verificationCodeGenerated (123456)
+- EmailAddressValidated
+- UserDetailsSubmitted (John, Doe, male, +12345678)
+
+By playing the series of events, we have the current state of the user.
+
+In contrast, Event Sourcing Events can be seen as detailed events. These events live within a specific domain where Domain Events are high level events that move across domains.
+(https://www.innoq.com/en/blog/domain-events-versus-event-sourcing/)
 
 ## State as Event vs State from Event
 
-The distinction is important. “State from Events” assumes an existing event stream, regardless of how it was produced, and projects state from it. No new events are added to the stream. “Events as State” is about events as the single source of truth. In other words, new events are added to the stream, but they’re constrained by business rules, and these rules depend on previous events as their input (as opposed to state as the input).
+The explaination above described Event Sourcing as state as Event. However, it is not necessarily the only intepretation of Event Sourcing.
 
+The distinction is important. “State from Events” assumes an existing event stream, regardless of how it was produced, and projects state from it. No new events are added to the stream. “Events as State” is about events as the single source of truth. In other words, new events are added to the stream, but they’re constrained by business rules, and these rules depend on previous events as their input (as opposed to state as the input).
 
 One common misconceptions is that Event Sourcing is associated with an Event Streaming or Event Driven Architecture. There are certainly many things you can achieve with Event Sourcing. Nevertheless, conceptually, Event Sourcing is no more than a pattern to store your data in a form of a serials of events. This can be an alternative model to the common CRUD object state management.
 
